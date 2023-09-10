@@ -1,7 +1,7 @@
 import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
 
-let galleryImages = new SimpleLightbox('.gallery a', {
+let picsGallery = new SimpleLightbox('.pict-card a', {
   captions: 'true',
   captionSelector: 'img',
   captionsData: 'alt',
@@ -11,4 +11,4 @@ let galleryImages = new SimpleLightbox('.gallery a', {
   scaleImageToRatio: true,
 });
 
-export { galleryImages };
+export { picsGallery };
