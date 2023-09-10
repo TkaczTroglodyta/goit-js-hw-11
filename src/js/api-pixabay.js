@@ -20,5 +20,28 @@ export default class PixabayApi {
         per_page: `${this.PICS_ON_PAGE}`,
       },
     };
+    try {
+      const response = await axios(axiosOptions);
+      const data = response.data;
+      return data;
+    } catch (err) {
+      console.error(err);
+    }
+  }
+
+  addPage() {
+    this.page += 1;
+  }
+
+  resetPage() {
+    this.page = 1;
+  }
+
+  get query() {
+    return this.searchQuery;
+  }
+
+  set query(newQuery) {
+    this.searchQuery = newQuery;
   }
 }
