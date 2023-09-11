@@ -13,6 +13,8 @@ const refs = {
 
 const PixabayApi = new PixabayApi();
 
+refs.searchForm.addEventListener('submit', onSearch);
+
 function onSearch(e) {
   e.preventDefault();
 
@@ -24,4 +26,16 @@ function onSearch(e) {
     return;
   }
   fetchGallery();
+}
+
+async function fetchGallery() {
+  refs.morePicsBtn.classList.add('is-hidden');
+  const { hits, totalHits } = await PixabayApi.fetchGallery();
+  if (!hits.length) {
+    Notify.failure(
+      `Sorry, there are no images matching your search query. Please try again.`
+    );
+    refs.morePicsBtn.classList.add('is-hidden');
+    return;
+  }
 }
