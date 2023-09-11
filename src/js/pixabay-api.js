@@ -24,8 +24,8 @@ export default class PixabayApi {
       const response = await axios(axiosOptions);
       const data = response.data;
       return data;
-    } catch (err) {
-      console.error(err);
+    } catch (error) {
+      console.error(error);
     }
   }
 
