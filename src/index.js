@@ -2,7 +2,6 @@ import './sass/main.scss';
 import PixabayApi from './js/pixabay-api';
 import { sltbox } from './js/sltbox';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
-import PixabayApi from './js/pixabay-api';
 
 // references first
 
