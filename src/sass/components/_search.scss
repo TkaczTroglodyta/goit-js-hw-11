@@ -1,4 +1,4 @@
-.feedback-form {
+.search-form {
   display: flex;
   flex-direction: column;
   max-width: 480px;
@@ -7,17 +7,21 @@
   border: 1px solid rgba(0, 0, 0, 0.12);
   border-radius: 4px;
 
-  label {
+  &__input {
     display: flex;
     flex-direction: column;
     margin-bottom: 16px;
   }
 
-  button {
+  &__logo {
     padding: 8px 12px;
     font: inherit;
     cursor: pointer;
   }
+}
+
+.search-img {
+  margin-right: 10px;
 }
 
 input,
