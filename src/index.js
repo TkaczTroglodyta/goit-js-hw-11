@@ -1,4 +1,3 @@
-import './sass/main.scss';
 import PixabayApi from './js/pixabay-api';
 import { picsGallery } from './js/sltbox';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
