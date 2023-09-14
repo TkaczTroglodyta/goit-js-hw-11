@@ -8,21 +8,22 @@
   </head>
   <body>
     <form class="search-form" id="search-form">
-      <input
-        class="search-form__input"
-        type="text"
-        name="searchQuery"
-        autocomplete="off"
-        placeholder="Search images..."
-      />
-      <button class="search-form__btn" type="submit">
-        <img
-          class="img-search"
-          src="./images/search.png"
-          alt="search"
-          width="20"
-        />Search
-      </button>
+      <div class="flexbox">
+        <div class="search">
+          <h1>Quest for interesting pictures</h1>
+          <h3>Click on search icon, then type your keyword.</h3>
+          <div>
+            <input
+              class="search-form__input"
+              type="text"
+              name="searchQuery"
+              autocomplete="off"
+              placeholder="Search images..."
+              required
+            />
+          </div>
+        </div>
+      </div>
     </form>
     <div class="gallery"></div>
     <button type="button" class="more-pics is-hidden">Load more</button>
