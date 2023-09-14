@@ -3,6 +3,14 @@
 // @import './components/gallery';
 // @import './components/page-base';
 
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,400i,700');
+
+* {
+  font-family: Roboto, sans-serif;
+  padding: 0;
+  margin: 0;
+}
+
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
     Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
@@ -29,11 +37,7 @@ a {
 }
 
 h1,
-h2,
 h3,
-h4,
-h5,
-h6,
 p {
   margin: 0;
   padding: 0;
@@ -51,40 +55,21 @@ p {
   // box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.2); // guess newer layout don't need this
 }
 
-.search-form__input {
-  width: 300px;
-  height: 30px;
-  padding: 5px 5px 5px 15px;
-  font-size: 16px;
-  outline: none;
-  border: none;
-  border-top-left-radius: 5px;
-  border-bottom-left-radius: 5px;
+// .search-form__input {
+//   width: 300px;
+//   height: 30px;
+//   padding: 5px 5px 5px 15px;
+//   font-size: 16px;
+//   outline: none;
+//   border: none;
+//   border-top-left-radius: 5px;
+//   border-bottom-left-radius: 5px;
 
-  &::placeholder {
-    font-size: 16px;
-    color: #cccccc;
-  }
-}
-
-.search-form__btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 140px;
-  height: 40px;
-  font-size: 16px;
-  font-weight: 600;
-  border: none;
-  border-top-right-radius: 5px;
-  border-bottom-right-radius: 5px;
-  cursor: pointer;
-
-  &:hover,
-  &:focus {
-    background-color: rgb(12, 12, 225);
-  }
-}
+//   &::placeholder {
+//     font-size: 16px;
+//     color: #cccccc;
+//   }
+// }
 
 .gallery {
   display: flex;
@@ -116,7 +101,7 @@ p {
 
   &:hover,
   &:focus {
-    box-shadow: 0px 0px 5px 2px rgba(0, 4, 56, 0.5);
+    box-shadow: 0px 0px 5px 2px rgba(63, 63, 60, 0.5);
   }
 }
 
@@ -199,14 +184,14 @@ p {
   // border: none;
   // border-radius: 8px;
   border-radius: 35px;
-  color: #3f3f3c;
+  color: #5f5f5a;
   background-color: #ddddd1;
   cursor: pointer;
 
   &:hover,
   &:focus {
     color: #ddddd1;
-    background-color: rgb(12, 12, 225);
+    background-color: #7f7e77;
   }
 
   &.is-hidden {
@@ -216,25 +201,7 @@ p {
 
 // animated search-form
 
-@import url('https://fonts.googleapis.com/css?family=Roboto:400,400i,700');
-
-* {
-  font-family: Roboto, sans-serif;
-  padding: 0;
-  margin: 0;
-}
-
-/* html, body {
-  width: 100%;
-  height: 100%;
-} */
-
-/* body {
-  background-color: #e2e9f4;
-}; */
-
 .flexbox {
-  /*   background: linear-gradient(155deg, #55c7ed, #2bb3e0, #3bc1ed); */
   width: 100%;
   height: 100%;
   display: flex;
