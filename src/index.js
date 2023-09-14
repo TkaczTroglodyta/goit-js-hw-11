@@ -93,20 +93,20 @@ function onGalleryCreate(elements) {
     <a href="${largeImageURL}">
       <img class="pict-card__img" src="${webformatURL}" alt="${tags}" loading="lazy" />
     </a>
-    <div class="pict-item">
-      <p class="pict-item__info">
+    <div class="pict-card__info">
+      <p class="pict-card__txt">
         <strong>Likes</strong>
         ${likes}
       </p>
-      <p class="pict-item__info">
+      <p class="pict-card__txt">
         <strong>Views</strong>
         ${views}
       </p>
-      <p class="pict-item__info">
+      <p class="pict-card__txt">
         <strong>Comments</strong>
         ${comments}
       </p>
-      <p class="pict-item__info">
+      <p class="pict-card__txt">
         <strong>Downloads</strong>
         ${downloads}
       </p>

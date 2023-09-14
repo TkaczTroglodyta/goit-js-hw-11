@@ -126,7 +126,7 @@ p {
   overflow: hidden;
 }
 
-.pict-item {
+.pict-card__info {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -134,7 +134,7 @@ p {
   padding: 15px;
 }
 
-.pict-item__info {
+.pict-card__txt {
   display: flex;
   flex-direction: column;
   text-align: center;
