@@ -126,7 +126,7 @@ p {
   overflow: hidden;
 }
 
-.pict-item__info {
+.pict-item {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -134,7 +134,7 @@ p {
   padding: 15px;
 }
 
-.pict-item__txt {
+.pict-item__info {
   display: flex;
   flex-direction: column;
   text-align: center;
