@@ -1,9 +1,9 @@
 import './sass/main.scss';
 import PixabayApi from './js/pixabay-api';
-import { sltbox } from './js/sltbox';
+import { picsGallery } from './js/sltbox';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
-// references first
+// References
 
 const refs = {
   searchForm: document.querySelector('.search-form'),
@@ -11,32 +11,45 @@ const refs = {
   morePicsBtn: document.querySelector('.more-pics'),
 };
 
-const PixabayApi = new PixabayApi();
+let onScreen = 0;
+const getResults = new PixabayApi();
 
 refs.searchForm.addEventListener('submit', onSearch);
-refs.morePicsBtn.addEventListener('click', onMorePics);
+refs.morePicsBtn.addEventListener('click', morePics);
+
+// Intersection observer of infinity scroll
+
+// const observerOpt = {
+//   rootMargin: '50px',
+//   root: null,
+//   threshold: 0.3,
+// };
+// const observer = new IntersectionObserver(morePics, observerOpt);
 
 function onSearch(e) {
   e.preventDefault();
 
   refs.gallery.innerHTML = '';
-  PixabayApi.query = e.currentTarget.elements.searchQuery.value.trim();
-  PixabayApi.resetPage();
-  if (PixabayApi.query === '') {
+  getResults.query = e.currentTarget.elements.searchQuery.value.trim();
+  getResults.resetPage();
+
+  if (getResults.query === '') {
     Notify.warning('Please, fill the search field');
     return;
   }
+
   fetchGallery();
 }
 
-function onMorePics() {
-  PixabayApi.addPage();
+function morePics() {
+  getResults.nextPage();
   fetchGallery();
 }
 
 async function fetchGallery() {
   refs.morePicsBtn.classList.add('is-hidden');
-  const { hits, totalHits } = await PixabayApi.fetchGallery();
+
+  const { hits, totalHits } = await getResults.fetchGallery();
   if (!hits.length) {
     Notify.failure(
       `Sorry, there are no images matching your search query. Please try again.`
@@ -44,17 +57,19 @@ async function fetchGallery() {
     refs.morePicsBtn.classList.add('is-hidden');
     return;
   }
+
   onGalleryCreate(hits);
 
-  onScreen = PixabayApi.page < Math.ceil(totalHits / 40);
+  onScreen = getResults.page < Math.ceil(totalHits / 40);
 
-  if (onScreen !== true) {
+  if (onScreen === false) {
     Notify.failure(
       `We're sorry, but you've reached the end of search results.`
     );
     refs.morePicsBtn.classList.add('is-hidden');
     return;
   }
+
   if (onScreen === true) {
     Notify.success(`Hooray! We found ${totalHits} images.`);
     refs.morePicsBtn.classList.remove('is-hidden');
@@ -75,19 +90,31 @@ function onGalleryCreate(elements) {
         downloads,
       }) => {
         return `<div class="pict-card">
-      <a href="${largeImageURL}">
-        <img class="pict-card__img" src="${webformatURL}" alt="${tags}" loading="lazy" />
-      </a>
-      <div class="info">
-        <p class="info-item"><strong>Likes</strong>${likes}</p>
-        <p class="info-item"><strong>Views</strong>${views}</p>
-        <p class="info-item"><strong>Comments</strong>${comments}</p>
-        <p class="info-item"><strong>Downloads</strong>${downloads}</p>
-      </div>
+    <a href="${largeImageURL}">
+      <img class="pict-card__img" src="${webformatURL}" alt="${tags}" loading="lazy" />
+    </a>
+    <div class="pict-item__info">
+      <p class="pict-item__txt">
+        <strong>Likes</strong>
+        ${likes}
+      </p>
+      <p class="pict-item__txt">
+        <strong>Views</strong>
+        ${views}
+      </p>
+      <p class="pict-item__txt">
+        <strong>Comments</strong>
+        ${comments}
+      </p>
+      <p class="pict-item__txt">
+        <strong>Downloads</strong>
+        ${downloads}
+      </p>
+    </div>
     </div>`;
       }
     )
     .join('');
   refs.gallery.insertAdjacentHTML('beforeend', markup);
-  PixabayApi.refresh();
+  picsGallery.refresh();
 }

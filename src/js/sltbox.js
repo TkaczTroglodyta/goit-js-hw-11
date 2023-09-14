@@ -2,7 +2,7 @@ import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
 
 let picsGallery = new SimpleLightbox('.pict-card a', {
-  captions: 'true',
+  captions: true,
   captionSelector: 'img',
   captionsData: 'alt',
   captionPosition: 'bottom',
