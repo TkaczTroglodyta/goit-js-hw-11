@@ -13,18 +13,6 @@ const refs = {
 let onScreen = 0;
 const getResults = new PixabayApi();
 
-refs.searchForm.addEventListener('submit', onSearch);
-refs.morePicsBtn.addEventListener('click', morePics);
-
-// Intersection observer of infinity scroll
-
-// const observerOpt = {
-//   rootMargin: '50px',
-//   root: null,
-//   threshold: 0.3,
-// };
-// const observer = new IntersectionObserver(morePics, observerOpt);
-
 function onSearch(e) {
   e.preventDefault();
 
@@ -117,3 +105,6 @@ function onGalleryCreate(elements) {
   refs.gallery.insertAdjacentHTML('beforeend', markup);
   picsGallery.refresh();
 }
+
+refs.searchForm.addEventListener('submit', onSearch);
+refs.morePicsBtn.addEventListener('click', morePics);
