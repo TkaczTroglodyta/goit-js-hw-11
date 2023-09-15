@@ -1,5 +1,9 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,400i,700');
+
 * {
-  box-sizing: border-box;
+  font-family: Roboto, sans-serif;
+  padding: 0;
+  margin: 0;
 }
 
 body {
@@ -7,7 +11,7 @@ body {
     Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #fafafa;
+  background-color: #fdfcef;
   color: #212121;
   line-height: 1.5;
 }
@@ -23,17 +27,12 @@ img {
   max-width: 100%;
   height: auto;
 }
-
 a {
   text-decoration: none;
 }
 
 h1,
-h2,
 h3,
-h4,
-h5,
-h6,
 p {
   margin: 0;
   padding: 0;

@@ -1,21 +1,58 @@
 .gallery {
   display: flex;
   flex-wrap: wrap;
-  margin: -10px;
-  padding-top: 100px;
+  flex-direction: column;
+  padding-top: 310px;
+}
+
+@media screen and (min-width: 420px) {
+  .gallery {
+    flex-direction: row;
+    padding-top: 245px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .gallery {
+    flex-direction: row;
+    padding-top: 210px;
+  }
 }
 
 .pict-card {
-  width: calc(100% / 3 - 10px * 2);
-  margin: 10px;
-  box-shadow: 0px 0px 5px 2px rgba(0, 4, 56, 0.5);
+  width: calc(100% / 1 - 15px * 2);
+  margin: 15px;
   border-radius: 8px;
   overflow: hidden;
-  background-color: rgba(77, 25, 67, 0.5);
+  background-color: #ddddd1;
 
   &:hover,
   &:focus {
-    box-shadow: 0px 0px 10px 5px rgba(255, 255, 255, 0.5);
+    box-shadow: 0px 0px 5px 2px rgba(63, 63, 60, 0.7);
+  }
+}
+
+@media screen and (min-width: 420px) {
+  .pict-card {
+    width: calc(100% / 1 - 15px * 2);
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .pict-card {
+    width: calc(100% / 2 - 15px * 2);
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .pict-card {
+    width: calc(100% / 3 - 15px * 2);
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  .pict-card {
+    width: calc(100% / 4 - 15px * 2);
   }
 }
 
@@ -26,15 +63,65 @@
   overflow: hidden;
 }
 
-.info {
+.pict-card__info {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 15px;
+  margin: 0 5px;
+  padding: 15px 5px;
 }
 
-.info-item {
+@media screen and (min-width: 390px) {
+  .pict-card__info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 10px;
+    padding: 15px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .pict-card__info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 15px;
+    padding: 15px;
+  }
+}
+
+.pict-card__txt {
   display: flex;
   flex-direction: column;
   text-align: center;
+  color: #5f5f5a;
+}
+
+.more-pics {
+  width: 160px;
+  height: 50px;
+  margin-top: 50px;
+  margin-bottom: 30px;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  font-size: 16px;
+  font-weight: 600;
+  border: solid 3px #7f7e77;
+  // border: none;
+  // border-radius: 8px;
+  border-radius: 35px;
+  color: #5f5f5a;
+  background-color: #ddddd1;
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    color: #ddddd1;
+    background-color: #7f7e77;
+  }
+
+  &.is-hidden {
+    display: none;
+  }
 }
