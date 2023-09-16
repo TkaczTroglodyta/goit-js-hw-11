@@ -52,7 +52,7 @@
 
 @media screen and (min-width: 1600px) {
   .pict-card {
-    width: calc(100% / 4 - 15px * 2);
+    width: calc(100% / 5 - 15px * 2);
   }
 }
 
@@ -91,11 +91,27 @@
   }
 }
 
+@media screen and (min-width: 1600px) {
+  .pict-card__info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 10px;
+    padding: 15px 10px;
+  }
+}
+
 .pict-card__txt {
   display: flex;
   flex-direction: column;
   text-align: center;
   color: #5f5f5a;
+}
+
+@media screen and (min-width: 1600px) {
+  .pict-card__txt {
+    font-size: 14px;
+  }
 }
 
 .more-pics {
