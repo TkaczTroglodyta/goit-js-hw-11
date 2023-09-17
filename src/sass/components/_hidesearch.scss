@@ -1,0 +1,16 @@
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 182px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  background: #ddddd1;
+  transition: all 0.3s;
+}
+
+.nav-up {
+  top: -182px;
+}

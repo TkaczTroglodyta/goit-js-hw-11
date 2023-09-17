@@ -15,7 +15,7 @@
 @media screen and (min-width: 768px) {
   .gallery {
     flex-direction: row;
-    padding-top: 210px;
+    padding-top: 200px; // 210px when search-form is fixed
   }
 }
 
