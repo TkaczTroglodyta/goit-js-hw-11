@@ -11,9 +11,15 @@ nav {
   transition: all 0.3s;
 }
 
+@media screen and (min-width: 360px) {
+  nav {
+    height: 204px;
+  }
+}
+
 @media screen and (min-width: 420px) {
   nav {
-    height: 184px;
+    height: 178px;
   }
 }
 
@@ -21,8 +27,14 @@ nav {
   top: -240px;
 }
 
+@media screen and (min-width: 360px) {
+  .nav-up {
+    height: 204px;
+  }
+}
+
 @media screen and (min-width: 480px) {
   .nav-up {
-    height: 184px;
+    height: 178px;
   }
 }

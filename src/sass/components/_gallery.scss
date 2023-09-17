@@ -5,6 +5,13 @@
   padding-top: 244px;
 }
 
+@media screen and (min-width: 360px) {
+  .gallery {
+    flex-direction: row;
+    padding-top: 214px;
+  }
+}
+
 @media screen and (min-width: 420px) {
   .gallery {
     flex-direction: row;
