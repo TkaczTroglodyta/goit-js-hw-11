@@ -2,20 +2,20 @@
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
-  padding-top: 310px;
+  padding-top: 244px;
 }
 
 @media screen and (min-width: 420px) {
   .gallery {
     flex-direction: row;
-    padding-top: 245px;
+    padding-top: 188px;
   }
 }
 
 @media screen and (min-width: 768px) {
   .gallery {
     flex-direction: row;
-    padding-top: 200px; // 210px when search-form is fixed
+    // padding-top: 210px; // use it when search-form is fixed
   }
 }
 
