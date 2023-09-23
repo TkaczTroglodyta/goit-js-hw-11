@@ -51,11 +51,39 @@ async function fetchGallery() {
   }
 
   if (onScreen === true) {
+    // scrollPage();
     Notify.success(`Hooray! We found ${totalHits} images.`);
     refs.morePicsBtn.classList.remove('is-hidden');
     return;
   }
 }
+
+// function scrollPage() {
+//   const { height: cardHeight } = document
+//     .querySelector('.photo-gallery')
+//     .firstElementChild.getBoundingClientRect();
+// }
+
+// smooth scroll
+
+// window.scrollBy({
+//   top: cardHeight * 2,
+//   behavior: 'smooth',
+// });
+
+// window.addEventListener('scroll', scrollFunction);
+
+// function scrollFunction() {
+//   if (document.body.scrollTop > 30 || document.documentElement.scrollTop > 30) {
+//     refs.upBtn.style.display = 'flex';
+//   } else {
+//     refs.upBtn.style.display = 'none';
+//   }
+// }
+
+// refs.pushTopBtn.addEventListener('click', () => {
+//   window.scrollTo({ top: 0, behavior: 'smooth' });
+// });
 
 refs.searchForm.addEventListener('submit', onSearch);
 refs.morePicsBtn.addEventListener('click', morePics);
